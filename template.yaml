@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  web-scraping-lambda
+
+  Web scraping running in AWS as Lambda Function
+  
+Globals:
+  Function:
+    Timeout: 60
+    MemorySize: 1600
+
+Resources:
+  WebScrapingFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: scraping/
+      Handler: dist/index.handler
+      Runtime: nodejs8.10
+
+Outputs:
+  WebScrapingFunction:
+    Description: "Web Scraping Lambda Function ARN"
+    Value: !GetAtt WebScrapingFunction.Arn
+  WebScrapingFunctionIamRole:
+    Description: "Implicit IAM Role created for Web scraping function"
+    Value: !GetAtt WebScrapingFunctionRole.Arn

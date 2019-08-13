@@ -1,0 +1,22 @@
+{
+  "name": "web-scraping-lambda",
+  "version": "1.0.0",
+  "description": "Web scraping deployed in AWS Lambda",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha tests/unit/"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.12",
+    "@types/node": "^12.7.0",
+    "@types/puppeteer-core": "^1.9.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "chrome-aws-lambda": "^1.19.0",
+    "parse-domain": "^2.3.1",
+    "puppeteer-core": "^1.19.0"
+  }
+}
