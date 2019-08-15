@@ -1,7 +1,7 @@
 import { load } from 'cheerio';
 import { args, executablePath, headless } from 'chrome-aws-lambda';
 import parseDomain from 'parse-domain';
-import { launch, Page, Request } from 'puppeteer-core';
+import { launch, Page } from 'puppeteer-core';
 
 import { Configuration, Target } from './criteria';
 import { Keyword, Keywords } from './model';
@@ -33,17 +33,11 @@ export const scrape = async (configuration: Configuration): Promise<Keywords> =>
 
 const initPage = async () => {
   const browser = await launch({
-    args: args,
+    args,
     executablePath: await executablePath,
-    headless: headless,
+    headless,
   });
   page = await browser.newPage();
-  await page.setRequestInterception(true);
-  page.on('request', (request: Request) =>
-    ['document', 'script'].includes(request.resourceType())
-      ? request.continue()
-      : request.abort(),
-  );
   return page;
 }
 
