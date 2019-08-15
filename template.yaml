@@ -10,6 +10,19 @@ Globals:
     Timeout: 60
     MemorySize: 1600
 
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: web-scraping-lambda
+    Description: Web scraping running in AWS as Lambda Function
+    Author: Alex Vladut
+    SpdxLicenseId: MIT
+    LicenseUrl: LICENSE.txt
+    ReadmeUrl: README.md
+    Labels: ['web-scraping', 'puppeteer']
+    HomePageUrl: https://github.com/alex-vladut/web-scraping-lambda
+    SemanticVersion: 0.0.1
+    SourceCodeUrl: https://github.com/alex-vladut/web-scraping-lambda
+
 Resources:
   WebScrapingFunction:
     Type: AWS::Serverless::Function
