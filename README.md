@@ -26,13 +26,13 @@ $ sam local invoke WebScrapingFunction --event event.json
 ## Deploy the application to AWS
 Package the CloudFormation template:
 ```bash
-$ sam package --output-template-file template-packaged.yaml --s3-bucket <bucket_name> --region <region>
+$ sam package --output-template-file template-packaged.yaml --s3-bucket <bucket_name> --region <region> --profile <profile>
 ```
 where `<bucket_name>` is a bucket from your AWS account where the resources will be published.
 
 Then you can deploy the application:
 ```bash
-$ sam deploy --template-file template-packaged.yaml --region <region> --capabilities CAPABILITY_IAM --stack-name web-scraping-lambda
+$ sam deploy --template-file template-packaged.yaml --region <region> --capabilities CAPABILITY_IAM --stack-name web-scraping-lambda --profile <profile>
 ```
 
 Now you should be able to go to AWS console and under Lambda section you will find your new Lambda function.

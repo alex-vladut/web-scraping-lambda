@@ -1,10 +1,10 @@
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: >
   web-scraping-lambda
 
   Web scraping running in AWS as Lambda Function
-  
+
 Globals:
   Function:
     Timeout: 60
@@ -18,7 +18,7 @@ Metadata:
     SpdxLicenseId: MIT
     LicenseUrl: LICENSE.txt
     ReadmeUrl: README.md
-    Labels: ['web-scraping', 'puppeteer']
+    Labels: ["web-scraping", "puppeteer"]
     HomePageUrl: https://github.com/alex-vladut/web-scraping-lambda
     SemanticVersion: 0.0.1
     SourceCodeUrl: https://github.com/alex-vladut/web-scraping-lambda
